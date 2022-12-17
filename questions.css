@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  color-scheme: dark;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100w;
+  width: 100vw;
+  text-align: center;
+  background: url("./shrubs.jpg") no-repeat center center/cover;
+}
+.container {
+  width: 60%;
+  background-color: #f3f3f3;
+  height: auto;
+  color: black;
+  border: solid 2px black;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container .container-content {
+  margin: 10px;
+  position: relative;
+}
+.container .container-content .question {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+.container .container-content .question::after {
+  content: "+";
+  position: absolute;
+  right: -5px;
+}
+.container .container-content .answer {
+  color: rgba(0, 0, 0, 0.8);
+  height: 0;
+  overflow: hidden;
+  transition: 1s;
+}
+.container .container-content.active .answer {
+  height: 200px;
+}
+.container .container-content.active .question {
+  font-size: 0.8rem;
+}
+.container .container-content.active .question::after {
+  content: "-";
+  position: absolute;
+  right: -5px;
+}
